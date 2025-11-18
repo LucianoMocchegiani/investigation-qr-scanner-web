@@ -1,0 +1,151 @@
+#root {
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 2rem;
+  background: #f5f7fb;
+  color: #0f172a;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.app {
+  max-width: 960px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 0 25px 60px rgba(15, 23, 42, 0.12);
+}
+
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+header h1 {
+  font-size: 2.2rem;
+  margin-bottom: 0.25rem;
+}
+
+header p {
+  color: #475569;
+  font-size: 1rem;
+}
+
+.scanner-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+@media (max-width: 640px) {
+  .scanner-section {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.scanner-card,
+.manual-card {
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 1.5rem;
+  background: #f8fafc;
+}
+
+.scanner-card h2,
+.manual-card h2 {
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #64748b;
+  margin-bottom: 1rem;
+}
+
+.actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+button {
+  border: none;
+  border-radius: 999px;
+  padding: 0.75rem 1.25rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.actions button:first-of-type {
+  background: #2563eb;
+  color: #fff;
+}
+
+.actions button:last-of-type {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(15, 23, 42, 0.1);
+}
+
+.reader {
+  width: 100%;
+  min-height: 260px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #000;
+}
+
+.manual-card textarea {
+  width: 100%;
+  min-height: 160px;
+  border-radius: 12px;
+  border: 1px solid #cbd5f5;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  resize: vertical;
+}
+
+.manual-card button {
+  width: 100%;
+  background: #0ea5e9;
+  color: white;
+}
+
+.status {
+  margin-top: 2rem;
+  padding: 1rem 1.25rem;
+  border-radius: 12px;
+  background: #ecfeff;
+  border: 1px solid #22d3ee;
+}
+
+.status.error {
+  background: #fee2e2;
+  border-color: #ef4444;
+  color: #991b1b;
+}
+
+.result {
+  margin-top: 1.5rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.5rem;
+  background: #f8fafc;
+}
+
+.result pre {
+  background: #0f172a;
+  color: #e2e8f0;
+  padding: 1rem;
+  border-radius: 12px;
+  overflow-x: auto;
+}
